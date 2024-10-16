@@ -4,6 +4,6 @@
              x:Class="CollectionViewDemo.MVVM.Views.DataView"
              Title="DataView">
 
-    <CollectionView />
+    <CollectionView ItemsSource="{Binding Products}"/>
     
 </ContentPage>
