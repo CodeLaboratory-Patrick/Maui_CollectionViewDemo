@@ -20,6 +20,14 @@ namespace CollectionViewDemo.Selectors
                     .TryGetValue("ProductStyle", out var productStyle);
                 return productStyle as DataTemplate;
             }
+            else
+            {
+                Application
+                    .Current
+                    .Resources
+                    .TryGetValue("offerStyle", out var offerStyle);
+                return offerStyle as DataTemplate;
+            }
             return new DataTemplate();
         }
     }
