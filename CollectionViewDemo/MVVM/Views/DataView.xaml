@@ -12,8 +12,9 @@
     <RefreshView Command="{Binding RefreshCommand}"
                  IsRefreshing="{Binding IsRefreshing}">
         <CollectionView ItemsSource="{Binding Products}"
-                    ItemTemplate="{StaticResource ProductTemplate}">
-
+                        ItemTemplate="{StaticResource ProductTemplate}"
+                        RemainingItemsThreshold="1"
+                        RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}">
         </CollectionView>
     </RefreshView>
 </ContentPage>
