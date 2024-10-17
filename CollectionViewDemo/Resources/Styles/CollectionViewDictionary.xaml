@@ -1,10 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <?xaml-comp compile="true" ?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:ViewModels="clr-namespace:CollectionViewDemo.MVVM.ViewModels">
 
     <DataTemplate x:Key="ProductStyle">
-        <Grid
+        <SwipeView>
+            <SwipeView.LeftItems>
+                <SwupItems>
+                    <SwipeItem BackgroundColor="DarkRed"
+                               Command="{Binding Source={RelativeSource AncestorType={x:Type ViewModels:DataViewModel}}, Path=DeleteCommand}"
+                               CommandParameter="{Binding}"
+                               IconImageSource="dotnet_bot" />
+                </SwupItems>
+            </SwipeView.LeftItems>
+            <Grid
             Margin="15,10,15,0"
             ColumnDefinitions=".1*,.2*,.7*"
             RowDefinitions="*,*">
@@ -37,6 +47,7 @@
                 Text="{Binding Price, StringFormat='{0:C}'}"
                 VerticalOptions="Center" />
         </Grid>
+        </SwipeView>
     </DataTemplate>
 
     <DataTemplate x:Key="OfferStyle">
