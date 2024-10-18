@@ -5,10 +5,31 @@
              Title="LayoutsPage">
 
     <CollectionView ItemsSource="{Binding Products}">
+        <CollectionView.Header>
+            <Frame Background="{StaticResource Primary}">
+                <Label FontAttributes="Bold"
+                       Text="Products"
+                       TextColor="White"/>
+            </Frame>
+        </CollectionView.Header>
+
+        <CollectionView.Footer>
+            <HorizontalStackLayout>
+                <Label FontSize="Title">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Powered by :"
+                                  TextColor="{StaticResource Tertiary}" />
+                            <Span Text=" .NET MAUI"
+                                  TextColor="{StaticResource Primary}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </HorizontalStackLayout>
+        </CollectionView.Footer>
+        
         <CollectionView.ItemsLayout>
-            <GridItemsLayout 
-                Span="3"
-                Orientation="Horizontal" />
+            <LinearItemsLayout Orientation="Vertical" />
         </CollectionView.ItemsLayout>
         
         <CollectionView.ItemTemplate>
