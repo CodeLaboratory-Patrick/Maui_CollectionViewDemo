@@ -15,6 +15,7 @@ namespace CollectionViewDemo.MVVM.ViewModels
     public class DataViewModel
     {
         private Product selectedProduct;
+        private List<object> selectedProducts;
 
         public ObservableCollection<Product> Products { get; set; } = new ObservableCollection<Product>();
         public bool IsRefreshing { get; set; }
@@ -26,7 +27,7 @@ namespace CollectionViewDemo.MVVM.ViewModels
                 selectedProduct = value;
             }
         }
-
+        public List<object> SelectedProducts {  get; set; } = new List<object>();
         public ICommand RefreshCommand =>
             new Command(async () =>
             {
@@ -52,6 +53,12 @@ namespace CollectionViewDemo.MVVM.ViewModels
             new Command(() =>
             {
                 var selectedProduct = SelectedProduct;
+            });
+
+        public ICommand ProductsChangedCommand =>
+            new Command(() =>
+            {
+                var productsList = SelectedProducts;
             });
 
         public DataViewModel()
