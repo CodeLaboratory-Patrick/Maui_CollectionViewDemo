@@ -8,7 +8,7 @@ namespace CollectionViewDemo
         {
             InitializeComponent();
 
-            MainPage = new LayoutsPage();
+            MainPage = new EmptyView();
         }
     }
 }

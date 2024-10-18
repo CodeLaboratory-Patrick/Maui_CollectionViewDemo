@@ -1,5 +1,4 @@
 ﻿using CollectionViewDemo.MVVM.Models;
-using Network;
 using PropertyChanged;
 using System;
 using System.Collections.Generic;
