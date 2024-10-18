@@ -1,4 +1,5 @@
 ﻿using CollectionViewDemo.MVVM.Models;
+using Network;
 using PropertyChanged;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,19 @@ namespace CollectionViewDemo.MVVM.ViewModels
     [AddINotifyPropertyChangedInterface]
     public class DataViewModel
     {
+        private Product selectedProduct;
+
         public ObservableCollection<Product> Products { get; set; } = new ObservableCollection<Product>();
         public bool IsRefreshing { get; set; }
+        public Product SelectedProduct
+        {
+            get => selectedProduct; 
+            set
+            {
+                selectedProduct = value;
+            }
+        }
+
         public ICommand RefreshCommand =>
             new Command(async () =>
             {
@@ -34,6 +46,12 @@ namespace CollectionViewDemo.MVVM.ViewModels
             new Command((p) =>
             {
                 Products.Remove((Product)p);
+            });
+
+        public ICommand ProductChangedCommand =>
+            new Command(() =>
+            {
+                var selectedProduct = SelectedProduct;
             });
 
         public DataViewModel()
