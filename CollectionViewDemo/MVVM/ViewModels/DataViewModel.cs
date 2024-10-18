@@ -27,7 +27,7 @@ namespace CollectionViewDemo.MVVM.ViewModels
                 selectedProduct = value;
             }
         }
-        public List<object> SelectedProducts {  get; set; } = new List<object>();
+        public List<object> SelectedProducts { get; set; } = new List<object>();
         public ICommand RefreshCommand =>
             new Command(async () =>
             {
@@ -64,6 +64,10 @@ namespace CollectionViewDemo.MVVM.ViewModels
         public DataViewModel()
         {
            RefreshItems();
+           SelectedProducts.Add(Products.Skip(5).FirstOrDefault());
+           SelectedProducts.Add(Products.Skip(7).FirstOrDefault());
+
+           SelectedProduct = Products.Skip(2).FirstOrDefault();
         }
 
         public void RefreshItems(int lastIndex = 0)
