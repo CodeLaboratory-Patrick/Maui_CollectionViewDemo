@@ -14,7 +14,8 @@
 
         <CollectionView
         ItemsSource="{Binding Products}"
-        SelectionMode="Multiple"SelectedItems="{Binding SelectedProducts}"
+        SelectionMode="Multiple"
+        SelectedItems="{Binding SelectedProducts}"
         SelectionChangedCommand="{Binding ProductsChangedCommand}"
             Grid.Row="1">
             <CollectionView.Header>
