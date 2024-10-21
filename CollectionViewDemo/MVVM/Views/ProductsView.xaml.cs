@@ -1,4 +1,5 @@
 using CollectionViewDemo.MVVM.ViewModels;
+using Microsoft.Maui.Controls;
 using System.Diagnostics;
 
 namespace CollectionViewDemo.MVVM.Views;
@@ -22,5 +23,18 @@ public partial class ProductsView : ContentPage
         Debug.WriteLine("CenterItemIndex: " + e.CenterItemIndex);
         Debug.WriteLine("LastVisibleItemIndex: " + e.LastVisibleItemIndex);
         Debug.Write("----------------------------------------");
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        var vm =
+              BindingContext as ProductsViewModel;
+
+        var product =
+             vm.Products
+             .SelectMany(p => p)
+             .FirstOrDefault(x => x.Id == 10);
+
+        
     }
 }
