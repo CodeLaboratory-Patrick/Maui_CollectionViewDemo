@@ -18,8 +18,8 @@
                 <LinearItemsLayout
                     ItemSpacing="10"
                     Orientation="Vertical"
-                    SnapPointsAlignment="Start"
-                    SnapPointsType="MandatorySingle" />
+                    SnapPointsType="MandatorySingle"
+                    SnapPointsAlignment="Start" />
             </CollectionView.ItemsLayout>
             
             <CollectionView.ItemTemplate>
