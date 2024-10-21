@@ -29,12 +29,12 @@ public partial class ProductsView : ContentPage
     {
         var vm =
               BindingContext as ProductsViewModel;
-
         var product =
              vm.Products
              .SelectMany(p => p)
              .FirstOrDefault(x => x.Id == 10);
 
-        
+        collectionView.ScrollTo(product, animate: false, 
+             position: ScrollToPosition.Center);
     }
 }
